@@ -1,4 +1,94 @@
-{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-06-27 19:37:00.231"}
-{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-06-27 19:37:04.731"}
-{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-06-28 15:59:05.800"}
-{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-06-28 16:22:58.610"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 19:34:36.940"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 19:35:39.448"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 20:59:17.355"}
+{"level":"error","name":"SequelizeConnectionAcquireTimeoutError","original":{},"parent":{},"timestamp":"2023-07-04 20:59:17.616"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 20:59:22.270"}
+{"level":"error","name":"SequelizeConnectionAcquireTimeoutError","original":{},"parent":{},"timestamp":"2023-07-04 20:59:22.323"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 20:59:30.347"}
+{"level":"error","name":"SequelizeDatabaseError","original":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"parameters":{},"parent":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));","timestamp":"2023-07-04 20:59:30.793"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 20:59:42.151"}
+{"level":"error","name":"SequelizeDatabaseError","original":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"parameters":{},"parent":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));","timestamp":"2023-07-04 20:59:42.379"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:01:01.660"}
+{"level":"error","name":"SequelizeDatabaseError","original":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"parameters":{},"parent":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));","timestamp":"2023-07-04 21:01:01.785"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:01:21.332"}
+{"level":"error","name":"SequelizeDatabaseError","original":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"parameters":{},"parent":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));","timestamp":"2023-07-04 21:01:21.531"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:02:39.992"}
+{"level":"error","name":"SequelizeDatabaseError","original":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"parameters":{},"parent":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));","timestamp":"2023-07-04 21:02:40.115"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:02:41.805"}
+{"level":"error","name":"SequelizeDatabaseError","original":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"parameters":{},"parent":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));","timestamp":"2023-07-04 21:02:41.899"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:03:53.088"}
+{"level":"error","name":"SequelizeDatabaseError","original":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"parameters":{},"parent":{"code":"3F000","file":"namespace.c","length":129,"line":"501","name":"error","position":"28","routine":"RangeVarGetCreationNamespace","severity":"FEHLER","sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));"},"sql":"CREATE TABLE IF NOT EXISTS \"tutorials\" (\"id\"   SERIAL , \"title\" VARCHAR(255), \"description\" VARCHAR(255), \"published\" BOOLEAN, \"createdAt\" TIMESTAMP WITH TIME ZONE NOT NULL, \"updatedAt\" TIMESTAMP WITH TIME ZONE NOT NULL, PRIMARY KEY (\"id\"));","timestamp":"2023-07-04 21:03:53.201"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:04:19.361"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:04:20.574"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:07:37.327"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:07:37.444"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:13:41.143"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:13:41.249"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:13:55.458"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:13:55.576"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:14:14.136"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:14:14.256"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:14:45.847"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:14:46.074"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:16:42.697"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:16:42.909"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:18:22.750"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:18:22.865"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:19:03.984"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:19:04.209"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:21:46.577"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:21:46.917"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:23:19.490"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:23:19.619"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:23:33.744"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:23:33.986"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:23:37.948"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:23:38.061"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:25:35.504"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:25:35.738"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:27:43.094"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:27:43.231"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:27:55.162"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:27:55.256"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:29:00.574"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:29:00.671"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:29:24.115"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:29:24.246"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:30:43.252"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:30:43.352"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:31:21.892"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:31:22.026"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:32:11.800"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:32:11.921"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:32:22.625"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:32:22.718"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:34:35.697"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:34:35.793"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:34:53.619"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:34:53.867"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:35:41.304"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:35:41.440"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:36:59.307"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:36:59.433"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:47:15.441"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:47:15.581"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:54:47.359"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:54:47.462"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:54:55.199"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:54:55.313"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:57:39.929"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:57:40.131"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 21:57:59.171"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 21:57:59.483"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 22:01:03.644"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 22:01:03.782"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 22:01:36.109"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 22:01:36.239"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 22:02:40.823"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 22:02:40.918"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 22:03:04.155"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 22:03:04.425"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 22:04:10.078"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 22:04:10.316"}
+{"level":"info","message":"App is listening on localhost at 4000","timestamp":"2023-07-04 22:07:14.203"}
+{"level":"info","message":"sync was ok","timestamp":"2023-07-04 22:07:14.298"}
