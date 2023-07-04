@@ -7,11 +7,11 @@ const app_port = process.env.APPLICATION_PORT;
 const logger = require('./helper/logger.js');
 const db = require('./models');
 
-const tutorialRouter = require("./routes/tutorial.routes");
+const userRouter = require("./routes/user.routes.js");
 
 app.use(express.json());
 
-app.use("/tutorial", tutorialRouter);
+app.use("/user", userRouter);
 
 db.sequelize.sync().then(() =>{ logger.info("sync was ok"); }).catch((err)=>{ logger.error(err); });
 

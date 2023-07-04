@@ -24,6 +24,6 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelizeConnection;
 
 //add the models to the database so that the controller can access it
-db.tutorials = require("./tutorial.model.js")(sequelizeConnection, Sequelize);
+db.users = require("./user.model.js")(sequelizeConnection, Sequelize);
 
 module.exports = db;
