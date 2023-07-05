@@ -14,7 +14,7 @@ const userRouter = require("./routes/user.routes.js");
 const swaggerDefinition = {
     openapi: '3.0.0',
     info: {
-      title: 'Express REST API for the soccer app',
+      title: 'NodeJS express REST API for the soccer app',
       version: '1.0.0',
       description: 'This is a REST API for the soccer app developed in the lecture Medizinische Smarte Sensoren'
     },
@@ -25,12 +25,7 @@ const swaggerDefinition = {
     ],
 };
   
-const options = {
-    swaggerDefinition,
-    apis: ['./routes/*.js'],
-};
-  
-const swaggerSpec = swaggerJSDoc(options);
+const swaggerSpec = swaggerJSDoc({ swaggerDefinition, apis: ['./routes/*.js'] });
 
 app.use(express.json());
 
@@ -39,7 +34,7 @@ app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(app_port, app_ip, () => {
     logger.info('App is listening on ' + app_ip + ' at ' + app_port);
-    db.sequelize.sync().then(() =>{ logger.info("sync was ok"); }).catch((err)=>{ logger.error(err); });
+    db.sequelize.sync().then(() =>{ logger.sequelize("Sequelize sync was successful!"); }).catch((err)=>{ logger.error("While sequelize sync: " + err); });
 });
 
 app.get('/', (req, res) => {
