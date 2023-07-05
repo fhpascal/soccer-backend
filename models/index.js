@@ -17,7 +17,7 @@ const sequelizeConnection = new Sequelize(process.env.DB_NAME_PROD, process.env.
         timestamps: false   //createdAt and updatedAt are added as columns if true
     },
     logging: msg => {
-        logger.info(msg);
+        logger.sequelize(msg);
     }
 });
 
