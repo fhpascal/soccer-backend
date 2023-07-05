@@ -7,9 +7,10 @@ const app_ip = process.env.APPLICATION_HOST;
 const app_port = process.env.APPLICATION_PORT;
 
 const logger = require('./helper/logger.js');
-const db = require('./models');
+const db = require('./models/_seq.start.js');
 
 const userRouter = require("./routes/user.routes.js");
+const codeRouter = require("./routes/code.routes.js");
 
 const swaggerDefinition = {
     openapi: '3.0.0',
@@ -30,6 +31,7 @@ const swaggerSpec = swaggerJSDoc({ swaggerDefinition, apis: ['./routes/*.js'] })
 app.use(express.json());
 
 app.use("/user", userRouter);
+app.use("/code", codeRouter);
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(app_port, app_ip, () => {

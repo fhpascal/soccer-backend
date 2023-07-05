@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../models/_seq.start");
 
 const User = db.users;
 
@@ -15,7 +15,7 @@ exports.create = (req, res) => {
     })
     .catch(err => {
         res.status(500).send({
-            message: err.message || "Some error occurred while a new user."
+            message: err.message || "Some error occurred while creating a new user."
         });
     });
 };
