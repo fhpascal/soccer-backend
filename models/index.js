@@ -1,4 +1,5 @@
 const Sequelize = require("sequelize");
+const logger = require('../helper/logger.js');
 
 //initialise the connection with certain start parameters (see docs)
 const sequelizeConnection = new Sequelize(process.env.DB_NAME_PROD, process.env.DB_USER_PROD, process.env.DB_PASSWORD_PROD, {
@@ -14,6 +15,9 @@ const sequelizeConnection = new Sequelize(process.env.DB_NAME_PROD, process.env.
     },
     define: {
         timestamps: false   //createdAt and updatedAt are added as columns if true
+    },
+    logging: msg => {
+        logger.info(msg);
     }
 });
 
