@@ -37,8 +37,11 @@ app.use(express.json());
 app.use("/user", userRouter);
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
-db.sequelize.sync().then(() =>{ logger.info("sync was ok"); }).catch((err)=>{ logger.error(err); });
-
 app.listen(app_port, app_ip, () => {
     logger.info('App is listening on ' + app_ip + ' at ' + app_port);
+    db.sequelize.sync().then(() =>{ logger.info("sync was ok"); }).catch((err)=>{ logger.error(err); });
+});
+
+app.get('/', (req, res) => {
+    res.redirect('/docs');
 });
