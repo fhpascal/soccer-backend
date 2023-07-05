@@ -30,5 +30,13 @@ db.sequelize = sequelizeConnection;
 //add the models to the database so that the controller can access it
 db.users = require("./user.model.js")(sequelizeConnection, Sequelize);
 db.codes = require("./code.model.js")(sequelizeConnection, Sequelize);
+db.players = require("./player.model.js")(sequelizeConnection, Sequelize);
+
+db.players.belongsTo(db.users, {
+    foreignKey: {
+      name: 'user_id',
+      allowNull: false
+    }
+});
 
 module.exports = db;

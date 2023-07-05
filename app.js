@@ -42,3 +42,34 @@ app.listen(app_port, app_ip, () => {
 app.get('/', (req, res) => {
     res.redirect('/docs');
 });
+
+app.post('/testplayer', (req, res) => {
+  const Player = db.players;
+
+  const newPlayer = {
+    date_of_birth: req.body.date_of_birth,
+    player_number: req.body.player_number,
+    player_position: req.body.player_position,
+    user_id: req.body.user_id
+  };
+
+  Player.create(newPlayer).then(data => {
+      res.send(data);
+  })
+  .catch(err => {
+      res.status(500).send({
+          message: err.message || "An error occurred while creating a new player."
+      });
+  });
+})
+
+app.get('/testgetfk', (req, res) => {
+  const Player = db.players;
+
+  Player.findByPk(2, { include: ["user"] }).then((player) => {
+    res.send(player);
+  })
+  .catch((err) => {
+    logger.error("error: " + err);
+  });
+});
