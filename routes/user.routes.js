@@ -104,7 +104,7 @@ router.get("/:id", userController.findOne);
  *     summary: Creates a new user according to the values passed 
  *     tags:
  *       - user
- *     description: This endpoint creates a new user with an automatiacally created id and returns the created user if successful.
+ *     description: This endpoint creates a new user with an automatiacally created id and returns the created user if successful. It can be seen as the route for registering a new user.
  *     requestBody:
  *       description: The user object to be created.
  *       required: true
@@ -117,6 +117,8 @@ router.get("/:id", userController.findOne);
  *               - password_hash
  *               - firstname
  *               - lastname
+ *             optional:
+ *               - code_value
  *             properties:
  *               email:
  *                 type: string
@@ -130,6 +132,10 @@ router.get("/:id", userController.findOne);
  *               lastname:
  *                type: string
  *                example: Doe
+ *               coach_code:
+ *                 type: integer
+ *                 description: If a coach code is provided, it is proved against the codes table and if the code is valid, the user is not a player but a coach and therefore has more permissions.
+ *                 example: 66752
  *     responses:
  *       200:
  *         description: The user with the given id.

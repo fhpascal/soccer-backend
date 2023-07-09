@@ -1,14 +1,17 @@
 const db = require("../models/_seq.start");
 
-const User = db.users;
+const User = db.users; 
 
 exports.create = (req, res) => {
     const newUser = {
         email: req.body.email,
         password_hash: req.body.password_hash,
         firstname: req.body.firstname,
-        lastname: req.body.lastname
+        lastname: req.body.lastname,
     };
+
+    //check for coach
+    const code_value = req.body.code_value;
 
     User.create(newUser).then(data => {
         res.send(data);

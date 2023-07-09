@@ -43,6 +43,23 @@ db.players.belongsTo(db.users, {
 });
 
 //n:m association between gamges and players, solved with the participation
+
+db.players.hasMany(db.participates_in, { 
+    foreignKey: "player_id"
+});
+
+db.participates_in.belongsTo(db.players, { 
+    foreignKey: "player_id"
+});
+
+db.games.hasMany(db.participates_in, { 
+    foreignKey: "game_id" 
+});
+
+db.participates_in.belongsTo(db.games, { 
+    foreignKey: "game_id" 
+});
+/*
 db.players.belongsToMany(db.games, { 
     through: db.participates_in,
     foreignKey: "game_id"
@@ -52,5 +69,6 @@ db.games.belongsToMany(db.players, {
     through: db.participates_in,
     foreignKey: "player_id" 
 });
+*/
 
 module.exports = db;
