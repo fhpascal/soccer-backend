@@ -10,6 +10,9 @@ Following steps need to be conducted in order to deploy the webservice on your s
    - `init_user_schema.sql`    This script creates a user called "soccer_dba" and a schema clled "soccer_dba".
    - `init_database.sql`      This script creates the database "soccer" and makes "soccer_dba" the owner.
    - `backup_database.sql`    Open pgAdmin, select a schema on the left (postgre) and click "Restore". Select the `backup_database.sql` file.
+ 
+   - Optional: `truncate_tables.sql`    Can be used to remove the test data from all tables.
+
 5) Add the .env file from Moodle to the root of your project (app.js level). In case any ports differ to the standard ports, you can change that here.
 6) To run the webservice, execute `npm run dev`
 7) You will have a swagger interface in order to get familiar with the implemted routes and also test them.
