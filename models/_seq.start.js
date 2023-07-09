@@ -32,7 +32,7 @@ db.users = require("./user.model.js")(sequelizeConnection, Sequelize);
 db.codes = require("./code.model.js")(sequelizeConnection, Sequelize);
 db.players = require("./player.model.js")(sequelizeConnection, Sequelize);
 db.games = require("./game.model.js")(sequelizeConnection, Sequelize);
-db.participation = require("./participation.model.js")(sequelizeConnection, Sequelize);
+db.participates_in = require("./participates_in.model.js")(sequelizeConnection, Sequelize);
 
 //define the foreign keys and associations here
 db.players.belongsTo(db.users, {
@@ -40,6 +40,17 @@ db.players.belongsTo(db.users, {
       name: 'user_id',
       allowNull: false
     }
+});
+
+//n:m association between gamges and players, solved with the participation
+db.players.belongsToMany(db.games, { 
+    through: db.participates_in,
+    foreignKey: "game_id"
+});
+
+db.games.belongsToMany(db.players, { 
+    through: db.participates_in,
+    foreignKey: "player_id" 
 });
 
 module.exports = db;

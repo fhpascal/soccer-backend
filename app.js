@@ -13,6 +13,7 @@ const userRouter = require("./routes/user.routes.js");
 const gameRouter = require("./routes/game.routes.js");
 const codeRouter = require("./routes/code.routes.js");
 const playerRouter = require("./routes/player.routes.js");
+const participationRouter = require("./routes/participation.routes.js");
 
 const swaggerDefinition = {
     openapi: '3.0.0',
@@ -36,6 +37,7 @@ app.use("/user", userRouter);
 app.use("/code", codeRouter);
 app.use("/game", gameRouter);
 app.use("/player", playerRouter);
+app.use("/participation", participationRouter);
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
