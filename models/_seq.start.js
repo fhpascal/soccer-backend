@@ -10,14 +10,14 @@ const sequelizeConnection = new Sequelize(process.env.DB_NAME_PROD, process.env.
     pool: {
         max: parseInt(process.env.DB_MAX_CONN),
         min: parseInt(process.env.DB_MIN_CONN),
-        acquire: parseInt(process.env.DB_ACQUIRE),
-        idle: parseInt(process.env.DB_IDLE)
+        acquire: parseInt(process.env.DB_ACQUIRE),  //how long will the connector try to get a connection in ms
+        idle: parseInt(process.env.DB_IDLE) //when will an unused connection be dropped in ms
     },
     define: {
         timestamps: false   //createdAt and updatedAt are added as columns if true
     },
     logging: msg => {
-        logger.sequelize(msg);
+        logger.sequelize(msg);  //overwrite this in order to use our custom sequelize log level
     }
 });
 
@@ -31,7 +31,10 @@ db.sequelize = sequelizeConnection;
 db.users = require("./user.model.js")(sequelizeConnection, Sequelize);
 db.codes = require("./code.model.js")(sequelizeConnection, Sequelize);
 db.players = require("./player.model.js")(sequelizeConnection, Sequelize);
+db.games = require("./game.model.js")(sequelizeConnection, Sequelize);
+db.participation = require("./participation.model.js")(sequelizeConnection, Sequelize);
 
+//define the foreign keys and associations here
 db.players.belongsTo(db.users, {
     foreignKey: {
       name: 'user_id',

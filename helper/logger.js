@@ -2,7 +2,7 @@ const winston = require("winston");
 const { combine, timestamp, json, printf } = winston.format;
 
 //define custom levels to log sequelize generated messages accordingly
-//the default log level is info - this means that all log levels below it will also be considered.
+//we added sequelize as "highest" log level. All levels below will be considered. This can be adapted in the .env
 const customLogLevels = {
   levels: {
     error: 1,

@@ -10,6 +10,7 @@ const logger = require('./helper/logger.js');
 const db = require('./models/_seq.start.js');
 
 const userRouter = require("./routes/user.routes.js");
+const gameRouter = require("./routes/game.routes.js");
 const codeRouter = require("./routes/code.routes.js");
 
 const swaggerDefinition = {
@@ -32,6 +33,8 @@ app.use(express.json());
 
 app.use("/user", userRouter);
 app.use("/code", codeRouter);
+app.use("/game", gameRouter);
+
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(app_port, app_ip, () => {
@@ -39,29 +42,10 @@ app.listen(app_port, app_ip, () => {
     db.sequelize.sync().then(() =>{ logger.sequelize("Sequelize sync was successful!"); }).catch((err)=>{ logger.error("While sequelize sync: " + err); });
 });
 
+//redirect to the swagger docs. Could also be done with the webserver directly.
 app.get('/', (req, res) => {
     res.redirect('/docs');
 });
-
-app.post('/testplayer', (req, res) => {
-  const Player = db.players;
-
-  const newPlayer = {
-    date_of_birth: req.body.date_of_birth,
-    player_number: req.body.player_number,
-    player_position: req.body.player_position,
-    user_id: req.body.user_id
-  };
-
-  Player.create(newPlayer).then(data => {
-      res.send(data);
-  })
-  .catch(err => {
-      res.status(500).send({
-          message: err.message || "An error occurred while creating a new player."
-      });
-  });
-})
 
 app.get('/testgetfk', (req, res) => {
   const Player = db.players;
