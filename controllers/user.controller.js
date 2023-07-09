@@ -59,6 +59,7 @@ exports.login = (req, res) => {
         password_hash: req.body.password_hash
     };
 
+    //use bcrypt.compareSync - need to try that with actual data from the frontend.
     User.findOne({where: {email: user.email, password_hash: user.password_hash}}).then(data => {
         if (data) {
             res.send(data);

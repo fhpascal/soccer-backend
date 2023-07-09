@@ -14,6 +14,7 @@ const gameRouter = require("./routes/game.routes.js");
 const codeRouter = require("./routes/code.routes.js");
 const playerRouter = require("./routes/player.routes.js");
 const participationRouter = require("./routes/participation.routes.js");
+const jwtRouter = require("./routes/jwt.routes.js");
 
 const swaggerDefinition = {
     openapi: '3.0.0',
@@ -27,6 +28,18 @@ const swaggerDefinition = {
         url: 'http://' + app_ip + ':' + app_port
       },
     ],
+    components: {
+        securitySchemes: {
+          bearerAuth: {
+            type: 'http',
+            in: 'header',
+            name: 'Authorization',
+            description: 'Bearer Token',
+            scheme: 'bearer',
+            bearerFormat: 'JWT',
+          },
+        },
+    } 
 };
   
 const swaggerSpec = swaggerJSDoc({ swaggerDefinition, apis: ['./routes/*.js'] });
@@ -39,6 +52,7 @@ app.use("/game", gameRouter);
 app.use("/player", playerRouter);
 app.use("/participation", participationRouter);
 
+app.use("/auth", jwtRouter); //only for testing and not for prod. yet
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(app_port, app_ip, () => {
@@ -50,3 +64,4 @@ app.listen(app_port, app_ip, () => {
 app.get('/', (req, res) => {
     res.redirect('/docs');
 });
+
