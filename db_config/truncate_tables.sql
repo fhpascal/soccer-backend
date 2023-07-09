@@ -1,0 +1,6 @@
+TRUNCATE TABLE soccer.coaches CASCADE;
+TRUNCATE TABLE soccer.codes CASCADE;
+TRUNCATE TABLE soccer.games CASCADE;
+TRUNCATE TABLE soccer.participates_in CASCADE;
+TRUNCATE TABLE soccer.players CASCADE;
+TRUNCATE TABLE soccer.users CASCADE;
