@@ -50,6 +50,29 @@ exports.findOne = (req, res) => {
     });
 };
 
+exports.login = (req, res) => {
+    const user ={
+        email: req.body.email,
+        password_hash: req.body.password_hash
+    };
+
+    User.findOne({where: {email: user.email, password_hash: user.password_hash}}).then(data => {
+        if (data) {
+            res.send(data);
+        } else {
+            res.status(401).send({
+                message: `Wrong credentials or wrong e-mail for user with e-mail=${user.email}.`
+            });
+        }
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).send({
+            message: `Error checking credentials for user with e-mail=${user.email}`
+        });
+    });
+};
+
 exports.update = (req, res) => {
     const user_id = req.params.id;
 

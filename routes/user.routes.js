@@ -120,12 +120,16 @@ router.get("/:id", userController.findOne);
  *             properties:
  *               email:
  *                 type: string
+ *                 example: john@doe.at
  *               password_hash:
  *                 type: string
+ *                 example: f0fda58630310a6dd91a7d8f0a4ceda2
  *               firstname:
  *                 type: string
+ *                 example: John
  *               lastname:
  *                type: string
+ *                example: Doe
  *     responses:
  *       200:
  *         description: The user with the given id.
@@ -167,6 +171,68 @@ router.get("/:id", userController.findOne);
  *                   example: Error while creating new user; access denied.
 */
 router.post("/", userController.create);
+/**
+ * @swagger
+ * /user/login:
+ *   post:
+ *     summary: Checks whether the passed credentials belong to a user.
+ *     tags:
+ *       - user
+ *     description: This endpoint checks the passed credentials (email and hashed password) and returns either the user they belong to or an appropriate error.
+ *     requestBody:
+ *       description: The user object to be created.
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             required:
+ *               - email
+ *               - password_hash
+ *             properties:
+ *               email:
+ *                 type: string
+ *                 example: john@doe.at
+ *               password_hash:
+ *                 type: string
+ *                 example: f0fda58630310a6dd91a7d8f0a4ceda2
+ *     responses:
+ *       200:
+ *         description: The user data.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 user_id:
+ *                   type: integer
+ *                   description: The user ID.
+ *                   example: 0
+ *                 email:
+ *                   type: string
+ *                   description: The user's email address.
+ *                   example: john@doe.com
+ *                 firstname:
+ *                   type: string
+ *                   description: The user's firstname.
+ *                   example: John
+ *                 lastname: 
+ *                   type: string
+ *                   description: The user's lastname.
+ *                   example: Doe
+ *       401:
+ *         description: Appropriate error if the credentials were wrong.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   description: Message with detailed error.
+ *                   example: Wrong credentials for user with email=john@doe.at
+*/
+router.post("/login", userController.login);
 /**
  * @swagger
  * /user/{id}:

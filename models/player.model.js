@@ -9,7 +9,7 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.DATE
         },
         player_number: {
-            type: Sequelize.INTEGER(5)
+            type: Sequelize.INTEGER
         },
         player_position: {
             type: Sequelize.STRING(50)

@@ -5,13 +5,13 @@ const gameController = require("../controllers/game.controller.js");
  * @swagger
  * /game:
  *   get:
- *     summary: Retrieve a list of all users.
+ *     summary: Retrieve a list of all games.
  *     tags:
  *       - game
- *     description: This endpoint returns an array of all users stored in the database. 
+ *     description: This endpoint returns an array of all games stored in the database. 
  *     responses:
  *       200:
- *         description: A list of users.
+ *         description: A list of games.
  *         content:
  *           application/json:
  *             schema:
@@ -19,73 +19,73 @@ const gameController = require("../controllers/game.controller.js");
  *               items: 
  *                 type: object 
  *                 properties:
- *                   user_id:
+ *                   game_id:
  *                     type: integer
- *                     description: The user ID.
  *                     example: 0
- *                   email:
+ *                   game_name:
  *                     type: string
- *                     description: The user's email address.
- *                     example: john@doe.com
- *                   password_hash:
+ *                     example: Game#1
+ *                   game_date:
  *                     type: string
- *                     description: The hashed password of the user stored in the database.
- *                     example: $2a$12$WE/pomhfet9n3YrudiaRIO0pw0gzqd4bSwS2taOwK6cM9zTO6Yz6.
- *                   firstname:
+ *                     format: date
+ *                     description: The date when the game took place.
+ *                   game_start:
  *                     type: string
- *                     description: The user's firstname.
- *                     example: John
- *                   lastname: 
+ *                     format: timestamp
+ *                     description: The time of the game's start.
+ *                     example: 11:20
+ *                   game_end: 
  *                     type: string
- *                     description: The user's lastname.
- *                     example: Doe
+ *                     format: timestamp
+ *                     description:  The time of the game's end.
+ *                     example: 12:30
 */
-router.get("/", userController.findAll);
+router.get("/", gameController.findAll);
 /**
  * @swagger
  * /game/{id}:
  *   get:
- *     summary: Retrieve the user who has the given id.
+ *     summary: Retrieve the game that has the given id.
  *     tags:
  *       - game
- *     description: This endpoint returns the user with the given id and an appropriate message if the user was not found.
+ *     description: This endpoint returns the game with the given id and an appropriate message if the game was not found.
  *     parameters:
  *       - in: path   
  *         name: id
  *         required: true
- *         description: id of the user to retrieve.
+ *         description: id of the game to retrieve.
  *         schema:
  *           type: integer 
  *     responses:
  *       200:
- *         description: The user with the given id.
+ *         description: The game with the given id.
  *         content:
  *           application/json:
  *             schema:
  *               type: object
  *               properties:
- *                 user_id:
+ *                 game_id:
  *                   type: integer
- *                   description: The user ID.
  *                   example: 0
- *                 email:
+ *                 game_name:
  *                   type: string
- *                   description: The user's email address.
- *                   example: john@doe.com
- *                 password_hash:
+ *                   example: Game#1
+ *                 game_date:
  *                   type: string
- *                   description: The hashed password of the user stored in the database.
- *                   example: $2a$12$WE/pomhfet9n3YrudiaRIO0pw0gzqd4bSwS2taOwK6cM9zTO6Yz6.
- *                 firstname:
+ *                   format: date
+ *                   description: The date when the game took place.
+ *                 game_start:
  *                   type: string
- *                   description: The user's firstname.
- *                   example: John
- *                 lastname: 
+ *                   format: timestamp
+ *                   description: The time of the game's start.
+ *                   example: 11:20:00
+ *                 game_end: 
  *                   type: string
- *                   description: The user's lastname.
- *                   example: Doe
+ *                   format: timestamp
+ *                   description:  The time of the game's end.
+ *                   example: 12:30:00
  *       404:
- *         description: Returns a message with the given id if no user was found.
+ *         description: Returns a message with the given id if no game was found.
  *         content:
  *           application/json:
  *             schema:
@@ -94,38 +94,56 @@ router.get("/", userController.findAll);
  *                 message:
  *                   type: string
  *                   description: Message with given id.
- *                   example: Cannot find User with id=3123
+ *                   example: Cannot find Game with id=3123
 */
 router.get("/:id", gameController.findOne);
 /**
  * @swagger
  * /game/:
  *   post:
- *     summary: Creates a new user according to the values passed 
+ *     summary: Creates a new game according to the values passed 
  *     tags:
  *       - game
- *     description: This endpoint creates a new user with an automatiacally created id and returns the created user if successful.
+ *     description: This endpoint creates a new game with an automatiacally created id and returns the created game if successful.
  *     requestBody:
- *       description: The user object to be created.
+ *       description: The game object to be created.
  *       required: true
  *       content:
  *         application/json:
  *           schema:
  *             type: object
  *             required:
- *               - email
- *               - password_hash
- *               - firstname
- *               - lastname
+ *               - game_name
+ *               - game_date
+ *               - game_start
+ *               - coach_id_view
+ *               - coach_id_create
  *             properties:
- *               email:
+ *               game_name:
  *                 type: string
- *               password_hash:
+ *                 example: Game#1
+ *               game_date:
  *                 type: string
- *               firstname:
+ *                 format: date
+ *                 description: The date when the game took place.
+ *               game_start:
  *                 type: string
- *               lastname:
- *                type: string
+ *                 format: timestamp
+ *                 description: The time of the game's start.
+ *                 example: 11:20:00
+ *               game_end: 
+ *                 type: string
+ *                 format: timestamp
+ *                 description:  The time of the game's end.
+ *                 example: 12:30:00
+ *               coach_id_view:
+ *                 type: integer
+ *                 description: The id of the coach who is allowed to view the game.
+ *                 example: 2
+ *               coach_id_create:
+ *                 type: integer
+ *                 description: The id of the coach who created the game.
+ *                 example: 2
  *     responses:
  *       200:
  *         description: The user with the given id.
@@ -134,28 +152,33 @@ router.get("/:id", gameController.findOne);
  *             schema:
  *               type: object
  *               properties:
- *                 user_id:
+ *                 game_name:
+ *                   type: string
+ *                   example: Game#1
+ *                 game_date:
+ *                   type: string
+ *                   format: date
+ *                   description: The date when the game took place.
+ *                 game_start:
+ *                   type: string
+ *                   format: timestamp
+ *                   description: The time of the game's start.
+ *                   example: 11:20:00
+ *                 game_end: 
+ *                   type: string
+ *                   format: timestamp
+ *                   description:  The time of the game's end.
+ *                   example: 12:30:00
+ *                 coach_id_view:
  *                   type: integer
- *                   description: The user ID.
- *                   example: 0
- *                 email:
- *                   type: string
- *                   description: The user's email address.
- *                   example: john@doe.com
- *                 password_hash:
- *                   type: string
- *                   description: The hashed password of the user stored in the database.
- *                   example: $2a$12$WE/pomhfet9n3YrudiaRIO0pw0gzqd4bSwS2taOwK6cM9zTO6Yz6.
- *                 firstname:
- *                   type: string
- *                   description: The user's firstname.
- *                   example: John
- *                 lastname: 
- *                   type: string
- *                   description: The user's lastname.
- *                   example: Doe
+ *                   description: The id of the coach who is allowed to view the game.
+ *                   example: 2
+ *                 coach_id_create:
+ *                   type: integer
+ *                   description: The id of the coach who created the game.
+ *                   example: 2
  *       500:
- *         description: Returns a message in case there was a problem while creating the user (database etc.).
+ *         description: Returns a message in case there was a problem while creating the gamr (database etc.).
  *         content:
  *           application/json:
  *             schema:
@@ -164,43 +187,52 @@ router.get("/:id", gameController.findOne);
  *                 message:
  *                   type: string
  *                   description: Message with detailed error.
- *                   example: Error while creating new user; access denied.
+ *                   example: Error while creating new game; access denied.
 */
 router.post("/", gameController.create);
 /**
  * @swagger
  * /game/{id}:
  *   put:
- *     summary: Updates all fields of a specific user 
+ *     summary: Updates all fields of a specific game 
  *     tags:
  *       - game
- *     description: Updates all fields passed in the body of the request of a specific user with the given id.
+ *     description: Updates all fields passed in the body of the request of a specific game with the given id.
  *     parameters:
  *       - in: path   
  *         name: id
  *         required: true
- *         description: id of the user that should be updated.
+ *         description: id of the game that should be updated.
  *         schema:
  *           type: integer 
  *     requestBody:
- *       description: The attributes of the user object that should be updated.
+ *       description: The attributes of the game object that should be updated.
  *       required: true
  *       content:
  *         application/json:
  *           schema:
  *             type: object
  *             properties:
- *               email:
+ *               game_name:
  *                 type: string
- *               password_hash:
+ *                 example: Game#22
+ *               game_date:
  *                 type: string
- *               firstname:
+ *                 format: date
+ *                 description: The date when the game took place.
+ *               game_start:
  *                 type: string
- *               lastname:
+ *                 format: timestamp
+ *                 description: The time of the game's start.
+ *                 example: 15:00:00
+ *               game_end: 
  *                 type: string
+ *                 format: timestamp
+ *                 description:  The time of the game's end.
+ *                 example: 19:30:00
  *     responses:
  *       200:
- *         description: An information that the user was updated successfully.
+ *         description: An information that the game was updated successfully.
  *         content:
  *           application/json:
  *             schema:
@@ -209,9 +241,9 @@ router.post("/", gameController.create);
  *                 message:
  *                   type: string
  *                   description: Message with detailed information.
- *                   example: The user was updated successfully.
+ *                   example: The game was updated successfully.
  *       404:
- *         description: Returns a message in case the user with the given id was not found or the body was empty.
+ *         description: Returns a message in case the game with the given id was not found or the body was empty.
  *         content:
  *           application/json:
  *             schema:
@@ -220,7 +252,7 @@ router.post("/", gameController.create);
  *                 message:
  *                   type: string
  *                   description: Message with detailed information.
- *                   example: Cannot update User with id=3123. The User was not found or the body is empty!
+ *                   example: Cannot update game with id=221. The game was not found or the body is empty!
 */
 router.put("/:id", gameController.update);
 

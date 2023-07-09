@@ -12,6 +12,7 @@ const db = require('./models/_seq.start.js');
 const userRouter = require("./routes/user.routes.js");
 const gameRouter = require("./routes/game.routes.js");
 const codeRouter = require("./routes/code.routes.js");
+const playerRouter = require("./routes/player.routes.js");
 
 const swaggerDefinition = {
     openapi: '3.0.0',
@@ -34,6 +35,7 @@ app.use(express.json());
 app.use("/user", userRouter);
 app.use("/code", codeRouter);
 app.use("/game", gameRouter);
+app.use("/player", playerRouter);
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
@@ -45,15 +47,4 @@ app.listen(app_port, app_ip, () => {
 //redirect to the swagger docs. Could also be done with the webserver directly.
 app.get('/', (req, res) => {
     res.redirect('/docs');
-});
-
-app.get('/testgetfk', (req, res) => {
-  const Player = db.players;
-
-  Player.findByPk(2, { include: ["user"] }).then((player) => {
-    res.send(player);
-  })
-  .catch((err) => {
-    logger.error("error: " + err);
-  });
 });

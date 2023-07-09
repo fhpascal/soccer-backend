@@ -6,7 +6,7 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey: true
         },
         code_value: {
-            type: Sequelize.INTEGER(10)
+            type: Sequelize.INTEGER
         }
     });
   
