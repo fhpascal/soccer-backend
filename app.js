@@ -28,6 +28,7 @@ const swaggerDefinition = {
         url: 'http://' + app_ip + ':' + app_port
       },
     ],
+    //this is needed to be able to define the JWT auth for swagger 
     components: {
         securitySchemes: {
           bearerAuth: {
