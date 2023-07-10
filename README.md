@@ -14,6 +14,6 @@ Following steps need to be conducted in order to deploy the webservice on your s
  
    - Optional: `truncate_tables.sql`    Can be used to remove the test data from all tables.
 
-5) Add the .env file from Moodle to the root of your project (app.js level). In case any ports differ to the standard ports, you can change that here.
+5) ~~Add the .env file from Moodle to the root of your project (app.js level).~~ In case any ports differ to the standard ports, you can change that here.
 6) To run the webservice, execute `npm run dev`
 7) You will have a swagger interface in order to get familiar with the implemted routes and also test them.
